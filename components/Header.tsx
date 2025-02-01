@@ -9,7 +9,7 @@ import {useRouter} from "next/router";
 import supeImg from "@/public/img/categories/index_supe.jpg";
 import zavtrakImg from "@/public/img/categor/zavtrak/1.png";
 import brusketyImg from "@/public/img/categor/bruschette/sandwich-with-salted-salmon-cream-cheese.jpg";
-import blinyImg from "@/public/img/categor/bliny/Clatite-cu-sunca-si-cascaval.png";
+import blinyImg from "@/public/img/categor/bliny/Clatite-cu-sunca-si-cascaval.jpg";
 import salateImg from "@/public/img/categor/salate/2024-04-13-843q7p-teplyij-salat-s-telyatinoj-i-kunzhutom_1712996930.jpg";
 import pastaImg from "@/public/img/categor/Pasta/Creamy-Salmon-Pasta-main-2.jpg";
 import goryachieBlyuda from "@/public/img/categor/goryacheye/ANOR3495.jpg";
