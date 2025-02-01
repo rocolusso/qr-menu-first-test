@@ -1,7 +1,7 @@
 
 import zavtrakImg from './../public/img/categor/zavtrak/1.png'
 import brusketyImg from './../public/img/categor/bruschette/sandwich-with-salted-salmon-cream-cheese.jpg'
-import blinyImg from "./../public/img/categor/bliny/Clatite-cu-sunca-si-cascaval.png"
+import blinyImg from "./../public/img/categor/bliny/Clatite-cu-sunca-si-cascaval.jpg"
 import salateImg from './../public/img/categor/salate/2024-04-13-843q7p-teplyij-salat-s-telyatinoj-i-kunzhutom_1712996930.jpg'
 
 import supeImg from './../public/img/categor/supy/Kuriniy-sup-za-15-minut-500x350-1200x840.jpg'
