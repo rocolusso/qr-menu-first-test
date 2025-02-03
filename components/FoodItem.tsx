@@ -1,7 +1,9 @@
 import { useState } from "react"
 import { useCart } from "@/lib/hooks/useCart"
 import { Button } from "@/components/ui/button"
-import ItemCarousel from "@/components/ItemCarousel";
+// import ItemCarousel from "@/components/ItemCarousel";
+import SwiperCarousel from "@/components/SwiperCarousel";
+
 
 type FoodItemProps = {
     id: string
@@ -33,17 +35,17 @@ export function FoodItem({ id, name, price, gramash, itemphotos }: FoodItemProps
             {
                 !itemphotos?.length  &&
 
-                <div className="border p-4 rounded-lg shadow-sm ">
-                    <div className={'relative bg-[#171717] flex flex-col  p-5 rounded'}>
-                        <div className={'flex justify-between'}>
-                            <div className={'text-white  max-w-[220px] uppercase text-2xl top-5 left-5'}>
+                <div className="border p-2 rounded-lg shadow ">
+                    <div className={'relative  flex flex-col  p-2 rounded-lg'}>
+                        <div className={'p-3 flex justify-between'}>
+                            <div className={'  max-w-[230px] uppercase text-xl top-5 left-5'}>
                                 {name}
                             </div>
-                            <div className={''}>
-                                <div className={'text-white   uppercase text-2xl top-5 right-5'}>
+                            <div>
+                                <div className={'   uppercase text-2xl top-5 right-5'}>
                                     <p>{price} MDL</p>
                                 </div>
-                                <div className={'text-white  top-12 right-5'}>
+                                <div className={'    top-12 right-5'}>
                                     {gramash}
                                 </div>
                             </div>
@@ -64,18 +66,22 @@ export function FoodItem({ id, name, price, gramash, itemphotos }: FoodItemProps
                 itemphotos?.length > 0 &&
 
 
-                <div className="border p-4 rounded-lg shadow-sm">
+                <div className="border p-2 rounded-lg shadow-lg">
                     <div
-                        className={'relative bg-[#171717] '}
+                        // className={'relative bg-[#171717] '}
                     >
-                        <div className={'text-white absolute max-w-[250px] uppercase text-2xl top-5 left-5'}>
-                            {name}
-                        </div>
-                        <div className={'text-white absolute  uppercase text-2xl top-5 right-5'}>
-                            <p>{price} MDL</p>
-                        </div>
-                        <div className={'text-white absolute    top-12 right-5'}>
-                            {gramash}
+                        <div className={'p-3 flex justify-between'}>
+                            <div className={'  max-w-[230px] uppercase text-xl top-5 left-5'}>
+                                {name}
+                            </div>
+                            <div>
+                                <div className={'   uppercase text-2xl top-5 right-5'}>
+                                    <p>{price} MDL</p>
+                                </div>
+                                <div className={'    top-12 right-5'}>
+                                    {gramash}
+                                </div>
+                            </div>
                         </div>
 
                         {
@@ -85,13 +91,21 @@ export function FoodItem({ id, name, price, gramash, itemphotos }: FoodItemProps
                                 })).length > 0 &&
                             <div className={'photos mx-auto'}>
                                 <div>
-                                    <ItemCarousel slides={
+                                    {/*<ItemCarousel slides={*/}
+                                    {/*    itemphotos.map((itt) =>*/}
+                                    {/*        ({*/}
+                                    {/*            src: `${apiUrl}${itt.url}`*/}
+                                    {/*        }))*/}
+                                    {/*}*/}
+                                    {/*/>*/}
+
+                                    <SwiperCarousel slides={
                                         itemphotos.map((itt) =>
-                                            ({
-                                                src: `${apiUrl}${itt.url}`
-                                            }))
-                                    }
-                                    />
+                                        ({
+                                            src: `${apiUrl}${itt.url}`
+                                        }))
+                                    }/>
+
                                 </div>
                             </div>
                         }

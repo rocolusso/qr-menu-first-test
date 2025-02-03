@@ -54,7 +54,7 @@ export default function Sousy({productItems}:{productItems:Item[]}) {
 
                     {
                         items?.length > 0 &&
-                        <div className={'relative'}>
+                        <div className={'z-50 relative'}>
 
                             <div
                                 className={'goToCart  text-center fixed bottom-0 left-0 right-0   mx-auto py-4 px-8 rounded'}>
@@ -78,7 +78,7 @@ export default function Sousy({productItems}:{productItems:Item[]}) {
 }
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const apiUrl = process.env.API_URL;
     const token = process.env.API_TOKEN;
 
@@ -92,6 +92,7 @@ export async function getServerSideProps() {
     return {
         props: {
             productItems: req.data || []
-        }
+        },
+        revalidate:5
     }
 }

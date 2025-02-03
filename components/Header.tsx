@@ -18,11 +18,13 @@ import garniry from "@/public/img/categor/garnir/myasnoe-assorti-s-kartofelem-pa
 import sousyImg from "@/public/img/categor/sousy/set-of-different-sau.jpg";
 import platoImg from "@/public/img/categor/plato/IMG_20200921_133111-scaled.jpg";
 import Link from "next/link";
+import {useThemeStore} from "@/lib/themeStore";
 
 const Header = () => {
     // const {locale,locales} = useRouter();
 
     const router = useRouter();
+    const { theme, toggleTheme } = useThemeStore();
 
 
     const categories= [
@@ -97,7 +99,7 @@ const Header = () => {
         <div className={'header  bg-[#171717] max-w-[600px] mx-auto  fixed top-0 left-0 right-0 z-10 '}>
             <div className={'bg-[#171717]   mx-auto flex justify-between '}>
                 <div className={'rounded-xl'}>
-                    <Link href="/">
+                    <Link href="/" className={'rounded-xl'}>
                         <Image
                             className={' p-3 rounded-xl'}
                             src={logo}
@@ -108,11 +110,21 @@ const Header = () => {
                         />
                     </Link>
                 </div>
-                <div className={'flex gap-10'}>
+                <div className={'flex gap-5'}>
+
+                    <div className={'flex justify-center items-center'}>
+                        <Button
+                            onClick={toggleTheme}
+                            className="px-4 py-2 border rounded-md bg-gray-800 dark:bg-gray-800 text-black  dark:text-white"
+                        >
+                            {theme === 'light' ? '🌙' : '☀️'}
+                        </Button>
+                    </div>
+
                     <div className={'locale flex justify-center items-center'}>
                         <Button
                             onClick={() => {
-                               router.push(`/${router.locales?.filter(loc=>loc !== router.locale)}`)
+                                router.push(`/${router.locales?.filter(loc=>loc !== router.locale)}`)
                             }}
                             className={'uppercase'}
                             variant={'secondary'}
