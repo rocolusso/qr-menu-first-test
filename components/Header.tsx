@@ -5,7 +5,7 @@ import {Button} from "@/components/ui/button";
 import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
 import {CiMenuFries} from "react-icons/ci";
 import {useRouter} from "next/router";
-
+import { TbArrowBackUp } from "react-icons/tb";
 import supeImg from "@/public/img/categories/index_supe.jpg";
 import zavtrakImg from "@/public/img/categor/zavtrak/1.png";
 import brusketyImg from "@/public/img/categor/bruschette/sandwich-with-salted-salmon-cream-cheese.jpg";
@@ -95,22 +95,44 @@ const Header = () => {
             url:"/meal/plato"
         }
     ]
+
     return (
         <div className={'header  bg-[#171717] max-w-[600px] mx-auto  fixed top-0 left-0 right-0 z-10 '}>
             <div className={'bg-[#171717]   mx-auto flex justify-between '}>
                 <div className={'rounded-xl'}>
-                    <Link href="/" className={'rounded-xl'}>
-                        <Image
-                            className={' p-3 rounded-xl'}
-                            src={logo}
-                            alt={'logo'}
-                            width={150}
-                            height={150}
-                            priority
-                        />
+                    <Link href="/" className={''}>
+                        <div className={'p-3 '}>
+                            <Image
+                                className={'  rounded-xl border border-white border-[0.5px] '}
+                                src={logo}
+                                alt={'logo'}
+                                width={120}
+                                height={120}
+                                priority
+                            />
+                        </div>
                     </Link>
                 </div>
                 <div className={'flex gap-5'}>
+
+                    {
+                        (router.asPath !== '/')  &&
+
+                        <div className={'flex justify-center items-center'}>
+                            <Button
+                                onClick={() => {
+                                router.push('/','/');
+                                }}
+                                variant={'secondary'}
+                            >
+                                <TbArrowBackUp
+                                    className={'scale-125'}
+
+                                />
+                            </Button>
+                        </div>
+                    }
+
 
                     <div className={'flex justify-center items-center'}>
                         <Button
@@ -124,11 +146,11 @@ const Header = () => {
                     <div className={'locale flex justify-center items-center'}>
                         <Button
                             onClick={() => {
-                                router.push(`/${router.locales?.filter(loc=>loc !== router.locale)}`)
+                                router.push(`/${router.locales?.filter(loc => loc !== router.locale)}`)
                             }}
                             className={'uppercase'}
                             variant={'secondary'}
-                        >{router.locales?.filter(loc=>loc !== router.locale)}</Button>
+                        >{router.locales?.filter(loc => loc !== router.locale)}</Button>
                     </div>
                     <div className={'menu flex justify-center items-center pr-3'}>
                         <Popover>
@@ -146,7 +168,7 @@ const Header = () => {
                                             className={'p-5'}
                                         >
                                             <div
-                                                 >
+                                            >
                                                 <h4 className={'uppercase text-xl '}>{router.locale === "ru" ? item.title_ru : item.title_ro}</h4>
                                             </div>
                                         </Link>

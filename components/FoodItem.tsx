@@ -17,7 +17,6 @@ export function FoodItem({ id, name, price, gramash, itemphotos }: FoodItemProps
     const apiUrl = process.env.API_URL;
     const { addItem, items } = useCart()
     const [isAdded, setIsAdded] = useState(false)
-
     const handleAddToCart = () => {
         addItem({ id, name, price })
         setIsAdded(true)

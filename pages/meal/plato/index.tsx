@@ -54,12 +54,10 @@ export default function Plato({productItems}:{productItems:Item[]}) {
 
                     {
                         items?.length > 0 &&
-                        <div className={'z-50 relative'}>
+                        <div className={'relative max-w-[600px] mx-auto'}>
 
-                            <div
-                                className={'goToCart  text-center fixed bottom-0 left-0 right-0   mx-auto py-4 px-8 rounded'}>
-                                <Link href={'/cart'}
-                                      className={'rounded w-full flex items-center justify-center text-center uppercase font-bold text-white shadow-xl bg-orange-500 p-5 '}>
+                            <div className={'goToCart z-50  text-center fixed bottom-0 left-0 right-0   mx-auto py-4 px-8 rounded'}>
+                                <Link href={'/cart'}  className={'mx-auto rounded w-full max-w-[600px] flex items-center justify-center text-center uppercase font-bold text-white shadow-xl bg-orange-500 p-5 '}>
                                     <p>Перейти к Заказу</p>
                                 </Link>
                             </div>

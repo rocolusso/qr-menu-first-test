@@ -66,10 +66,10 @@ export default function CartPage() {
                     )}
 
                     <div className={' mx-auto py-8 px-8'}>
-                        <div className={'goToCart  text-center fixed bottom-0 left-0 right-0   mx-auto py-4 px-8 rounded'}>
+                        <div className={'goToCart  z-50 text-center fixed bottom-0 left-0 right-0   mx-auto py-4 px-8 rounded'}>
                             <Link
                                 href={'/'}
-                                className={'rounded w-full flex items-center justify-center text-center uppercase font-bold text-white bg-green-700 p-5 '}>
+                                className={'rounded w-full max-w-[600px] mx-auto flex items-center justify-center text-center uppercase font-bold text-white bg-green-700 p-5 '}>
                                 <p>Вернуться в меню</p>
                             </Link>
                         </div>
